@@ -1,0 +1,31 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: twitterkafka
+spec:
+  schedule: "*/3 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: twitterkafka
+            image: johnjude/twitterkafka:v1
+            env:
+            - name: consumer_key
+              value: 'RUPtieBLsuPKrip11c9YIKU2r'
+            - name: consumer_secret
+              value: 'O2jCqHhMxC2YHUQxxtLoaRoIAUJTrIQtgDSJqcjYwI72NFchg6'
+            - name: access_token
+              value: '77773008-0y230izPaJKmBZ1qa1T8TG9T1OcxTZqiN3r8dfobs'
+            - name: access_token_secret
+              value: 'ce8lZx90uIWY3kbjkOwe2IzIXCUELQ11BygktWH7AjMko'
+            - name: bootstrap_server1
+              value: '40.113.233.72:9092'
+            - name: bootstrap_server2
+              value: '40.113.233.72:9093'
+            - name: bootstrap_server3
+              value: '40.113.233.72:9094'
+            - name: topic_name
+              value: 'tweeter_tweet'
+          restartPolicy: OnFailure

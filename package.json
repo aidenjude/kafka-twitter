@@ -1,0 +1,17 @@
+{
+  "name": "headstart",
+  "version": "1.0.0",
+  "description": "learning apache kafka",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "John Jude",
+  "license": "ISC",
+  "dependencies": {
+    "kafka-node": "^5.0.0",
+    "optimist": "^0.6.1",
+    "twit": "^2.2.11"
+  }
+}
